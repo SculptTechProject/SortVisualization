@@ -1,6 +1,8 @@
 #include "raylib.h"
 #include <vector>
 #include <random>
+#include <thread>
+#include <chrono>
 
 void DrawArray(const std::vector<int>& array, int highlightedIndex = -1) {
     int screenWidth = GetScreenWidth();
@@ -13,6 +15,25 @@ void DrawArray(const std::vector<int>& array, int highlightedIndex = -1) {
             barColor = RED;
         }
         DrawRectangle(i * barWidth, screenHeight - array[i], barWidth, array[i], barColor);
+    }
+}
+
+void BubbleSortVisualized(std::vector<int>& array) {
+    int n = array.size();
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n - i - 1; j++) {
+            BeginDrawing();
+            ClearBackground(RAYWHITE);
+            DrawArray(array, j); // Draw random array and sort
+            EndDrawing();
+
+            //Delay for 50ms
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+
+            if(array[j] > array[j + 1]) {
+                std::swap(array[j], array[j + 1]);
+            }
+        }
     }
 }
 
@@ -32,10 +53,9 @@ int main(){
 
     /* Main Loop */
     while(!WindowShouldClose()) {
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawArray(array); // Draw random array and sort
-        EndDrawing();
+        BubbleSortVisualized(array);
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        break;
     }
 
     /* End of ray-lib */
