@@ -18,7 +18,7 @@ void DrawArray(const std::vector<int>& array, int highlightedIndex = -1) {
     }
 }
 
-void BubbleSortVisualized(std::vector<int>& array) {
+void BubbleSortVisualized(std::vector<int>& array, Sound swapSound) {
     int n = array.size();
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n - i - 1; j++) {
@@ -26,6 +26,8 @@ void BubbleSortVisualized(std::vector<int>& array) {
             ClearBackground(RAYWHITE);
             DrawArray(array, j); // Draw random array and sort
             EndDrawing();
+
+            PlaySound(swapSound); // Plays sound when changed highlighted bar
 
             //Delay for 50ms
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
@@ -42,6 +44,10 @@ int main(){
     /* Window initialization */
     InitWindow(800, 600, "Bubble sort visualisation");
 
+    InitAudioDevice(); // Initializing audio
+
+    Sound swapSound = LoadSound("res/sound.wav"); // Adding sound file
+
     /* Creating random list */
     std::random_device rd;  // Source of randomness
     std::mt19937 gen(rd()); // Generator random number of Mersenne Twister
@@ -54,8 +60,8 @@ int main(){
 
     /* Main Loop */
     while(!WindowShouldClose()) {
-        BubbleSortVisualized(array);
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        BubbleSortVisualized(array, swapSound); // Sort with visualization
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Before end, watch how good ;)
         break;
     }
 
