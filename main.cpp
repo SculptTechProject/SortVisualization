@@ -30,6 +30,7 @@ void BubbleSortVisualized(std::vector<int>& array) {
             //Delay for 50ms
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
+            // Swapping
             if(array[j] > array[j + 1]) {
                 std::swap(array[j], array[j + 1]);
             }
