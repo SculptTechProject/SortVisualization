@@ -1,0 +1,3 @@
+/Users/matioszkea/CLionProjects/AlgorithmVisualization/cmake-build-debug/CMakeFiles/SortingVisualization.dir
+/Users/matioszkea/CLionProjects/AlgorithmVisualization/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/matioszkea/CLionProjects/AlgorithmVisualization/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,11 @@
+# ninja log v6
+0	427	1726865501738994108	CMakeFiles/SortingVisualization.dir/main.cpp.o	c3ab59d911e2906f
+430	469	1726865502168224934	SortingVisualization	e7a8ac49bad495bc
+3	358	1726865671230881893	CMakeFiles/SortingVisualization.dir/main.cpp.o	c3ab59d911e2906f
+358	397	1726865671585358109	SortingVisualization	e7a8ac49bad495bc
+4	370	1726865890974451425	CMakeFiles/SortingVisualization.dir/main.cpp.o	c3ab59d911e2906f
+370	410	1726865891340511804	SortingVisualization	e7a8ac49bad495bc
+4	603	1726866684956220897	CMakeFiles/SortingVisualization.dir/main.cpp.o	c3ab59d911e2906f
+603	645	1726866685554825150	SortingVisualization	e7a8ac49bad495bc
+5	450	1726866702900731075	CMakeFiles/SortingVisualization.dir/main.cpp.o	c3ab59d911e2906f
+450	493	1726866703346095221	SortingVisualization	e7a8ac49bad495bc
